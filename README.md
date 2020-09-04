@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+rake spec = rspec
+
+rake cucumber = bundle exec cucumber

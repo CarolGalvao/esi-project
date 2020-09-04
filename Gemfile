@@ -26,12 +26,14 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # gem 'rack-cors'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'rspec'
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+end
+
+group :test do
   gem 'cucumber-rails', require: false
-  # database_cleaner is not mandatory, but highly recommended
   gem 'database_cleaner'
+  gem 'rake'
+  gem 'rspec'
 end
 
 group :development do

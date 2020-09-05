@@ -23,6 +23,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'rspec-rails'
 end
 
 group :code_analysis, :development do
@@ -36,8 +39,8 @@ group :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'rake'
-  gem 'rspec'
-  gem 'simplecov', require: false
+  gem 'shoulda-matchers'
+  gem 'simplecov', '~> 0.17.1', require: false
 end
 
 group :development do

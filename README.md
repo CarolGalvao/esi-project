@@ -1,28 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Salutis API (Nome provisório)
 
-Things you may want to cover:
+[![Maintainability](https://api.codeclimate.com/v1/badges/3c3ab653d7b738ad630f/maintainability)](https://codeclimate.com/github/CarolGalvao/esi-project/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/3c3ab653d7b738ad630f/test_coverage)](https://codeclimate.com/github/CarolGalvao/esi-project/test_coverage)
+[![Build Status](https://travis-ci.org/CarolGalvao/esi-project.svg?branch=master)](https://travis-ci.org/CarolGalvao/esi-project)
 
-* Ruby version
+**Heroku App:** https://salutis.herokuapp.com/
+**Github Repo:** https://github.com/CarolGalvao/esi-project
 
-* System dependencies
+## Integrantes
 
-* Configuration
+- Carolina Galvão de Oliveira - 10724135
+- Júlia Cristina de Brito Passos - 10723840
+- Rodrigo Lima de Moraes - 10724420
+- Rogério Ferreira Dos Santos - 10687882
+- Vinícius Bueno de Carvalho Rodrigues - 10346770
 
-* Database creation
+## Problema
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-rake spec = rspec
-
-rake cucumber = bundle exec cucumber
+Facilitar a comunicação entre educadores físicos e pessoas que querem fazer exercícios

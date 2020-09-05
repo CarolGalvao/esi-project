@@ -24,6 +24,11 @@ Layout/EmptyLinesAroundBlockBody:
   Exclude:
     - 'db/schema.rb'
 
+Layout/LineLength:
+  Max: 120
+  Exclude:
+    - db/schema.rb
+
 Metrics/MethodLength:
   Max: 20
 
@@ -36,11 +41,6 @@ Metrics/BlockLength:
     - db/schema.rb
     - lib/tasks/*
     - lib/validator/*
-
-Metrics/LineLength:
-  Max: 120
-  Exclude:
-    - db/schema.rb
 
 Metrics/ModuleLength:
   Max: 250

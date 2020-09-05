@@ -13,6 +13,7 @@
 ## Integrantes
 
 - Carolina Galvão de Oliveira - 10724135
+- João Francisco Cocca Fukuda - 10843566
 - Júlia Cristina de Brito Passos - 10723840
 - Rodrigo Lima de Moraes - 10724420
 - Rogério Ferreira Dos Santos - 10687882

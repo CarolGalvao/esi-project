@@ -24,6 +24,13 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
 
+group :code_analysis, :development do
+  gem 'rubocop', require: false
+  gem 'rubocop-faker', require: false
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
+end
+
 group :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'

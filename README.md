@@ -7,6 +7,7 @@
 [![Build Status](https://travis-ci.org/CarolGalvao/esi-project.svg?branch=master)](https://travis-ci.org/CarolGalvao/esi-project)
 
 **Heroku App:** https://salutis.herokuapp.com/
+
 **Github Repo:** https://github.com/CarolGalvao/esi-project
 
 ## Integrantes

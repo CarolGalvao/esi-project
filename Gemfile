@@ -40,7 +40,7 @@ group :test do
   gem 'database_cleaner'
   gem 'rake'
   gem 'shoulda-matchers'
-  gem 'simplecov', require: false
+  gem 'simplecov', '~> 0.17.1', require: false
 end
 
 group :development do

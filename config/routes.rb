@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root to: 'api/root#index'
+  root to: 'api/lessons#index'
+
   namespace 'api' do
-    resources :root
+    resources :lessons, only: [:index, :create]
   end
 end

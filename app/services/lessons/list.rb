@@ -1,18 +1,15 @@
 module Lessons
-    class List
-        include BaseService
+  class List
+    include BaseService
 
-        def initialize(params = {})
-        end
+    def call
+      list
+    end
 
-        def call
-            list
-        end
+    private
 
-        private
-
-        def list
-            Lesson.all
-        end
-     end
+    def list
+      Lesson.all
+    end
+  end
 end

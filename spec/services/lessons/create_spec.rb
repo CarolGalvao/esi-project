@@ -1,4 +1,5 @@
 require 'rails_helper'
+
 RSpec.describe Lessons::Create, type: :service do
   let(:response) { described_class.call(lesson_params) }
 

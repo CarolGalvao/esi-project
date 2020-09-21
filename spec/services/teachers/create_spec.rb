@@ -1,4 +1,5 @@
 require 'rails_helper'
+
 RSpec.describe Teachers::Create, type: :service do
   let(:response) { described_class.call(teacher_params) }
 
@@ -6,7 +7,7 @@ RSpec.describe Teachers::Create, type: :service do
 
   let(:teacher_params) do
     {
-      name: name,
+      name: name
     }
   end
 

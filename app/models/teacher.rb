@@ -5,5 +5,4 @@
 # updated_at
 
 class Teacher < ApplicationRecord
-
 end

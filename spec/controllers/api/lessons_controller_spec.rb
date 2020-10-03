@@ -1,26 +1,46 @@
 require 'rails_helper'
 
 RSpec.describe Api::LessonsController, type: :controller, api: true do
-  let(:data) { JSON.parse(response.body)['data'] }
+  let(:body) { JSON.parse(response.body) }
   let(:params) { {} }
+  let(:teacher) { create(:teacher) }
 
   describe 'GET index' do
-    let!(:lessons) { create_list(:lesson, 5).map { |lesson| lesson.attributes.except('created_at', 'updated_at') } }
+    let!(:lessons) do
+      create_list(:lesson, 5, teacher: teacher).map do |lesson|
+        lesson.attributes.except('created_at', 'updated_at')
+      end
+    end
 
     before { get :index, params: params }
 
     it 'returns all lessons' do
-      expect(data.map { |lesson| lesson.except('created_at', 'updated_at') }).to eq(lessons)
+      expect(
+        body.map { |lesson| lesson.except('teacher') }
+      ).to eq(lessons.map { |lesson| lesson.except('teacher_id') })
+    end
+
+    it "returns the correct lesson's teacher" do
+      expect(
+        body.map { |lesson| lesson['teacher']['id'] }
+      ).to eq(lessons.pluck('teacher_id'))
     end
   end
 
   describe 'Post create' do
     let(:params) { { lesson: { name: 'joana', description: 'jasdhkerubfelj', link: 'http.com.br' } } }
 
-    before { post :create, params: params }
+    before do
+      request.headers.merge!(teacher.create_new_auth_token)
+      post :create, params: params
+    end
 
     it 'returns the created lesson' do
-      expect(data.slice(*params[:lesson].keys.map(&:to_s))).to eq(params[:lesson].transform_keys(&:to_s))
+      expect(body.slice(*params[:lesson].keys.map(&:to_s))).to eq(params[:lesson].transform_keys(&:to_s))
+    end
+
+    it 'associates the created lesson to the teacher' do
+      expect(body['teacher']['id']).to eq(teacher.id)
     end
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_20_185806) do
+ActiveRecord::Schema.define(version: 2020_10_02_215230) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,12 +21,22 @@ ActiveRecord::Schema.define(version: 2020_09_20_185806) do
     t.string "link"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "teacher_id"
+    t.index ["teacher_id"], name: "index_lessons_on_teacher_id"
   end
 
   create_table "teachers", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "provider", default: "email", null: false
+    t.string "uid", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "email"
+    t.json "tokens"
+    t.index ["email"], name: "index_teachers_on_email", unique: true
+    t.index ["uid", "provider"], name: "index_teachers_on_uid_and_provider", unique: true
   end
 
+  add_foreign_key "lessons", "teachers"
 end

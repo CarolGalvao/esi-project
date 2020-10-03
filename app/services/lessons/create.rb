@@ -3,6 +3,7 @@ module Lessons
     include BaseService
 
     def initialize(params = {})
+      @teacher = params.fetch(:teacher)
       @name = params.fetch(:name)
       @description = params.fetch(:description)
       @link = params.fetch(:link)
@@ -20,6 +21,7 @@ module Lessons
 
     def lesson_params
       {
+        teacher: @teacher,
         name: @name,
         description: @description,
         link: @link

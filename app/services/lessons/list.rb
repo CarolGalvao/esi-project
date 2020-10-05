@@ -9,7 +9,7 @@ module Lessons
     private
 
     def list
-      Lesson.all
+      Lesson.includes(:teacher).all
     end
   end
 end

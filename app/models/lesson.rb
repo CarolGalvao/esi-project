@@ -7,4 +7,5 @@
 # updated_at
 
 class Lesson < ApplicationRecord
+  belongs_to :teacher
 end

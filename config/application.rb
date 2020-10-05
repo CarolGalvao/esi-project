@@ -35,7 +35,8 @@ module EsiProject
         resource(
           '*',
           headers: :any,
-          methods: [:get, :patch, :put, :delete, :post, :options]
+          methods: [:get, :patch, :put, :delete, :post, :options],
+          expose: ['access-token', 'client', 'uid']
         )
       end
     end

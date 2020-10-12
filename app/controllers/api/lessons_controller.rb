@@ -3,7 +3,7 @@ module Api
     before_action :authenticate_teacher!, except: [:index]
 
     def index
-      lessons = Lessons::List.call
+      lessons = Lessons::List.call(index_params)
 
       render json: lessons, status: :ok
     end
@@ -15,6 +15,9 @@ module Api
     end
 
     private
+    def index_params
+      params.permit(:query)
+    end
 
     def create_params
       params[:lesson].permit(:name, :description, :link).merge(teacher: current_teacher)

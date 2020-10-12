@@ -1,0 +1,2 @@
+web: cd ../esi-project-interface && yarn start
+api: RAILS_ENV=test rails s -b 0.0.0.0 -p 8000

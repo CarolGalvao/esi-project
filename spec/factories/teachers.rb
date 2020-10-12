@@ -3,5 +3,6 @@ FactoryBot.define do
     name { 'MyString' }
     email { 'MyString@MyString.com' }
     password { 'MyString' }
+    provider { 'email' }
   end
 end

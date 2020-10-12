@@ -29,10 +29,19 @@ Facilitar a comunicação entre educadores físicos e pessoas que querem fazer e
 ### Teacher API
 
 ```
-POST /api/teacher_auth - body: email, password, password_confirmation - cadastro
+POST /api/teacher_auth - cadastro - body:
+{
+	"email": "prof@email.com",
+	"password": "senha",
+	"password_confirmation": "senha"
+}
 ```
 ```
-POST /api/teacher_auth/sign_in - body: email, password - login
+POST /api/teacher_auth/sign_in - login - body:
+{
+	"email": "prof@email.com",
+	"password": "senha"
+}
 ```
 ```
 DELETE /api/teacher_auth/sign_out - logout
@@ -49,12 +58,12 @@ GET / redireciona para /api/lessons
 GET /api/lessons - retorna as aulas e os professores atribuidos a elas (não precisa de autenticação)
 ```
 ```
-POST /api/lessons - criar uma aula
-body: `"lesson": {
-        "name": "yoga",
-        "description": "zen",
-        "link": "www.google.com/yoga"
-      }`
+POST /api/lessons - criar uma aula - body:
+"lesson": {
+	"name": "yoga",
+	"description": "zen",
+	"link": "www.google.com/yoga"
+}
 ```
 
 ### Current Teacher API
@@ -63,9 +72,9 @@ body: `"lesson": {
 GET /api/current_teacher/:id - retorna o professor que está autenticado
 ```
 ```
-PUT /api/current_teacher/:id - atualiza dados do professor
-body: `"teacher": {
-        "name": "joaninha de fogo",
-        "email": "joana@email.com"
-      }`
+PUT /api/current_teacher/:id - atualiza dados do professor - body:
+"teacher": {
+	"name": "joaninha de fogo",
+	"email": "joana@email.com"
+}
 ```

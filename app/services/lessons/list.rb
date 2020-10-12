@@ -2,6 +2,10 @@ module Lessons
   class List
     include BaseService
 
+    def initialize(params = {})
+      @query = params.fetch(:query)
+    end
+
     def call
       list
     end
@@ -9,7 +13,7 @@ module Lessons
     private
 
     def list
-      Lesson.includes(:teacher).all
+      Lesson.includes(:teacher).where("name LIKE ?", "%#{@query}%").or(Lesson.includes(:teacher).where("description LIKE ?", "%#{@query}%"))
     end
   end
 end

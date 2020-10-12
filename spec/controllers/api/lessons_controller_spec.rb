@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Api::LessonsController, type: :controller, api: true do
+  let(:query) { "" }
   let(:body) { JSON.parse(response.body) }
-  let(:params) { {} }
+  let(:params) { { query: query } }
   let(:teacher) { create(:teacher) }
 
   describe 'GET index' do
